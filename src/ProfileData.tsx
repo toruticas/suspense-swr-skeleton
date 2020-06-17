@@ -1,13 +1,12 @@
 import React, { FC } from 'react'
 import useSWR from 'swr'
 
+import { GITHUB_PROFILE_API } from './api'
 import { SpinnerLoader } from './SpinnerLoader'
 import './ProfileData.css'
 
 const ProfileData: FC = () => {
-  const { data, isValidating, mutate } = useSWR(
-    'https://api.github.com/users/toruticas',
-  )
+  const { data, isValidating, mutate } = useSWR(GITHUB_PROFILE_API)
 
   return (
     <div className="ProfileData">

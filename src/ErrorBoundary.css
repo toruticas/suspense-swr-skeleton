@@ -1,0 +1,21 @@
+.ProfileErrorBoundary {
+  position: relative;
+}
+
+.ProfileErrorBoundary .info {
+  top: 0;
+  right: 0;
+  width: 262px;
+  min-height: 457px;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.ProfileErrorBoundary svg {
+  margin-top: 100px;
+  fill: white;
+}
