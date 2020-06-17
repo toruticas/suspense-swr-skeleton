@@ -1,9 +1,13 @@
 import React, { FC } from 'react'
 import useSWR from 'swr'
+
+import { SpinnerLoader } from './SpinnerLoader'
 import './ProfileData.css'
 
 const ProfileData: FC = () => {
-  const { data } = useSWR('https://api.github.com/users/toruticas')
+  const { data, isValidating, mutate } = useSWR(
+    'https://api.github.com/users/toruticas',
+  )
 
   return (
     <div className="ProfileData">
@@ -18,6 +22,15 @@ const ProfileData: FC = () => {
         <small>{data?.data?.login}</small>
       </h2>
       <p>{data?.data?.bio}</p>
+      {isValidating && (
+        <div className="spinner">
+          <SpinnerLoader />
+        </div>
+      )}
+
+      <button onClick={() => mutate()} disabled={isValidating}>
+        Revalidate
+      </button>
     </div>
   )
 }

@@ -1,3 +1,7 @@
+.ProfileData {
+  position: relative;
+}
+
 .ProfileData h2 small {
   font-size: 20px;
   font-style: normal;
@@ -10,4 +14,10 @@
   font-size: 14px;
   line-height: 1.5;
   color: #24292e;
+}
+
+.ProfileData .spinner {
+  position: absolute;
+  top: 290px;
+  right: 10px;
 }
