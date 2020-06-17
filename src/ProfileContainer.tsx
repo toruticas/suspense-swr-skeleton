@@ -1,9 +1,10 @@
 import React, { FC, Suspense } from 'react'
 
 import { ProfileData } from './ProfileData'
+import { SkeletonLoading } from './SkeletonLoading'
 
 const ProfileContainer: FC = () => (
-  <Suspense fallback="loading...">
+  <Suspense fallback={<SkeletonLoading />}>
     <ProfileData />
   </Suspense>
 )
