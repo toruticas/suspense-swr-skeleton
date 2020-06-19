@@ -36,7 +36,7 @@ class ErrorBoundary extends React.Component {
       <div className="ProfileErrorBoundary" onClick={this.handleClick}>
         <div className="info">
           <ConfusedIcon />
-          <p>Something Wen&apost Wrong</p>
+          <p>Something Went Wrong</p>
           <p>Click to retry</p>
         </div>
         <SkeletonLoading />
