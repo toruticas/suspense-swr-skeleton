@@ -1,8 +1,7 @@
-import React, { Suspense, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { cache } from 'swr'
 
 import { GITHUB_PROFILE_API } from './api'
-import { ProfileData } from './ProfileData'
 import { SkeletonLoading } from './SkeletonLoading'
 import { ConfusedIcon } from './ConfusedIcon'
 
@@ -37,7 +36,7 @@ class ErrorBoundary extends React.Component {
       <div className="ProfileErrorBoundary" onClick={this.handleClick}>
         <div className="info">
           <ConfusedIcon />
-          <p>Something Wen't Wrong</p>
+          <p>Something Wen&apost Wrong</p>
           <p>Click to retry</p>
         </div>
         <SkeletonLoading />

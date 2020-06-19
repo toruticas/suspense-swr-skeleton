@@ -3,10 +3,11 @@ import useSWR from 'swr'
 
 import { GITHUB_PROFILE_API } from './api'
 import { SpinnerLoader } from './SpinnerLoader'
+import { AlertIcon } from './AlertIcon'
 import './ProfileData.css'
 
 const ProfileData: FC = () => {
-  const { data, isValidating, mutate } = useSWR(GITHUB_PROFILE_API)
+  const { data, error, isValidating, mutate } = useSWR(GITHUB_PROFILE_API)
 
   return (
     <div className="ProfileData">
@@ -24,6 +25,12 @@ const ProfileData: FC = () => {
       {isValidating && (
         <div className="spinner">
           <SpinnerLoader />
+        </div>
+      )}
+
+      {error && (
+        <div className="spinner">
+          <AlertIcon />
         </div>
       )}
 
